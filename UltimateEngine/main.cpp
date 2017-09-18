@@ -5,6 +5,8 @@
 #include<iostream>
 
 void framebuffer_size_callback(GLFWwindow * mainWindow, int width, int height);
+void processInput(GLFWwindow *window);
+
 
 int main()
 {
@@ -31,10 +33,11 @@ int main()
 	}
 
 	glfwSetFramebufferSizeCallback(mainWindow, framebuffer_size_callback);
-
+	
 
 	while (!glfwWindowShouldClose(mainWindow))
 	{
+		processInput(mainWindow);
 		glfwSwapBuffers(mainWindow);
 		glfwPollEvents();
 	}
@@ -44,12 +47,18 @@ int main()
 
 
 	
-
+	glfwTerminate();
 	return 0;
 }
 
-void framebuffer_size_callback(GLFWwindow * mainWindow, int width, int height)
+void framebuffer_size_callback(GLFWwindow * window, int width, int height)
 {
 	glViewport(0, 0, width, height);
 
+}
+
+void processInput(GLFWwindow *window)
+{
+	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+		glfwSetWindowShouldClose(window, true);
 }
