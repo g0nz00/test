@@ -4,6 +4,7 @@
 
 #include<iostream>
 
+void framebuffer_size_callback(GLFWwindow * mainWindow, int width, int height);
 
 int main()
 {
@@ -29,10 +30,26 @@ int main()
 		return -1;
 	}
 
-	glViewport(0, 0, 800, 600);
+	glfwSetFramebufferSizeCallback(mainWindow, framebuffer_size_callback);
 
 
-	void framebuffer_size_callback(GLFWwindow * mainWindow, int width, int height);
+	while (!glfwWindowShouldClose(mainWindow))
+	{
+		glfwSwapBuffers(mainWindow);
+		glfwPollEvents();
+	}
+
+
+
+
+
+	
 
 	return 0;
+}
+
+void framebuffer_size_callback(GLFWwindow * mainWindow, int width, int height)
+{
+	glViewport(0, 0, width, height);
+
 }
