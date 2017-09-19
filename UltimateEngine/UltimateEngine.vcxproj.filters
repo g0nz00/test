@@ -26,18 +26,15 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="main.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="Shader.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Shaders\fragmentShader.fs">
+    <None Include="Shaders\fragmentShader.frag">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Shaders\vertexShader.vs">
+    <None Include="Shaders\vertexShader.vert">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
