@@ -119,9 +119,11 @@
   <ItemGroup>
     <ClCompile Include="..\glad.c" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="STB_Image_Implementation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\fragmentShader.frag" />
